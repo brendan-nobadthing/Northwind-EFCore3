@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0-preview7.19362.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview7.19362.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.EF.Persistence.MSSQL\Northwind.EF.Persistence.MSSQL.csproj" />
+    <ProjectReference Include="..\Northwind.EF.Persistence.PSQL\Northwind.EF.Persistence.PSQL.csproj" />
+    <ProjectReference Include="..\Northwind.EF.Persistence\Northwind.EF.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
