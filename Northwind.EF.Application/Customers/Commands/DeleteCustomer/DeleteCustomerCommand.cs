@@ -1,4 +1,6 @@
-﻿namespace Northwind.EF.Application.Customers.Commands.DeleteCustomer
+﻿using MediatR;
+
+namespace Northwind.EF.Application.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommand : IRequest
     {

@@ -1,6 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Northwind.EF.Application.Interfaces;
+using Northwind.EF.Domain.Entities;
 
 namespace Northwind.EF.Application.Customers.Commands.CreateCustomer
 {
@@ -55,11 +57,11 @@ namespace Northwind.EF.Application.Customers.Commands.CreateCustomer
                     PostalCode = request.PostalCode
                 };
 
-                _context.Customers.Add(entity);
+                _context.Set<Customer>().Add(entity);
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                await _mediator.Publish(new CustomerCreated { CustomerId = entity.CustomerId }, cancellationToken);
+                //await _mediator.Publish(new CustomerCreated { CustomerId = entity.CustomerId }, cancellationToken);
 
                 return Unit.Value;
             }

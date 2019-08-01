@@ -1,5 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using MediatR.Pipeline;
+using Microsoft.Extensions.Logging;
 
 namespace Northwind.EF.Application.Infrastructure
 {

@@ -1,4 +1,6 @@
-﻿namespace Northwind.EF.Application.Customers.Commands.CreateCustomer
+﻿using FluentValidation;
+
+namespace Northwind.EF.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
     {

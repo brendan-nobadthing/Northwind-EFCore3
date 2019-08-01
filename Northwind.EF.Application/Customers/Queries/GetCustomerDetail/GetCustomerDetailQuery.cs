@@ -1,4 +1,6 @@
-﻿namespace Northwind.EF.Application.Customers.Queries.GetCustomerDetail
+﻿using MediatR;
+
+namespace Northwind.EF.Application.Customers.Queries.GetCustomerDetail
 {
     public class GetCustomerDetailQuery : IRequest<CustomerDetailModel>
     {

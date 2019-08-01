@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Northwind.EF.Domain.Entities;
 
 namespace Northwind.EF.Application.Customers.Queries.GetCustomerDetail
 {

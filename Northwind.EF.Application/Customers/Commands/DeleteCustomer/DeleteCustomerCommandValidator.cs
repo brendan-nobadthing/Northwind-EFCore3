@@ -1,4 +1,6 @@
-﻿namespace Northwind.EF.Application.Customers.Commands.DeleteCustomer
+﻿using FluentValidation;
+
+namespace Northwind.EF.Application.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandValidator : AbstractValidator<DeleteCustomerCommand>
     {

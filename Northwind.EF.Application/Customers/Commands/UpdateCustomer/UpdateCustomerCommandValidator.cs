@@ -1,4 +1,7 @@
-﻿namespace Northwind.EF.Application.Customers.Commands.UpdateCustomer
+﻿using FluentValidation;
+using FluentValidation.Validators;
+
+namespace Northwind.EF.Application.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommandValidator : AbstractValidator<UpdateCustomerCommand>
     {

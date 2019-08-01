@@ -1,4 +1,8 @@
-﻿namespace Northwind.EF.Application.Customers.Queries.GetCustomersList
+﻿using AutoMapper;
+using Northwind.EF.Application.Interfaces.Mapping;
+using Northwind.EF.Domain.Entities;
+
+namespace Northwind.EF.Application.Customers.Queries.GetCustomersList
 {
     public class CustomerLookupModel : IHaveCustomMapping
     {

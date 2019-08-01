@@ -1,6 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Northwind.EF.Application.Exceptions;
+using Northwind.EF.Application.Interfaces;
+using Northwind.EF.Domain.Entities;
 
 namespace Northwind.EF.Application.Customers.Commands.UpdateCustomer
 {
@@ -29,7 +33,7 @@ namespace Northwind.EF.Application.Customers.Commands.UpdateCustomer
 
             public async Task<Unit> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
             {
-                var entity = await _context.Customers
+                var entity = await _context.Set<Customer>()
                     .SingleOrDefaultAsync(c => c.CustomerId == request.Id, cancellationToken);
 
                 if (entity == null)

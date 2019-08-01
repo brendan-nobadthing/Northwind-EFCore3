@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Northwind.EF.Application.Interfaces;
 
 namespace Northwind.EF.Persistence
 {
-    public class NorthwindDbContext: DbContext
+    public class NorthwindDbContext: DbContext, INorthwindDbContext
     {
        
         public NorthwindDbContext(DbContextOptions<NorthwindDbContext> options)
@@ -17,5 +18,7 @@ namespace Northwind.EF.Persistence
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(NorthwindDbContext).Assembly);
         }
+
+      
     }
 }

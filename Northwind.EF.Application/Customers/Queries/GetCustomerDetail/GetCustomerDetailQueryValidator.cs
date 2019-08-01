@@ -1,4 +1,6 @@
-﻿namespace Northwind.EF.Application.Customers.Queries.GetCustomerDetail
+﻿using FluentValidation;
+
+namespace Northwind.EF.Application.Customers.Queries.GetCustomerDetail
 {
     public class GetCustomerDetailQueryValidator : AbstractValidator<GetCustomerDetailQuery>
     {
