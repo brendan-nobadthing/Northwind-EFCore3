@@ -8,7 +8,7 @@ namespace Northwind.EF.Persistence.MSSQL
 {
     public class MsSqlNorthwindDbContext : NorthwindDbContext
     {
-        public MsSqlNorthwindDbContext(DbContextOptions<NorthwindDbContext> options): base(options)
+        public MsSqlNorthwindDbContext(DbContextOptions options) : base(options)
         {
         }
     }

@@ -5,12 +5,11 @@ using Northwind.EF.Persistence.PSQL;
 
 namespace Northwind.EF.Persistence.MSSQL
 {
-    public static class MsSqlServiceCollectionExtensions
+    public static class PsqlServiceCollectionExtensions
     {
-        public static IServiceCollection AddPsqlDbContext<TContext>(
+        public static IServiceCollection AddPsqlDbContext(
             this IServiceCollection serviceCollection, 
             IConfiguration config = null)
-            where TContext: DbContext
         {
             serviceCollection.AddDbContext<NorthwindDbContext, PsqlNorthwindDbContext>(options =>
             {

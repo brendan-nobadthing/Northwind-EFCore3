@@ -13,7 +13,7 @@ namespace Northwind.EF.Persistence.PSQL
         {
             var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", false)
-                .AddJsonFile("appetings.local.json", true)
+                .AddJsonFile("appsettings.local.json", true)
                 .Build();
 
             var builder = new DbContextOptionsBuilder<NorthwindDbContext>();

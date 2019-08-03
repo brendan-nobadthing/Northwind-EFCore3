@@ -9,7 +9,7 @@ namespace Northwind.EF.Persistence
     public class NorthwindDbContext: DbContext, INorthwindDbContext
     {
        
-        public NorthwindDbContext(DbContextOptions<NorthwindDbContext> options)
+        public NorthwindDbContext(DbContextOptions options)
             : base(options)
         {
         }

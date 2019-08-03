@@ -6,11 +6,11 @@ namespace Northwind.EF.Persistence.MSSQL
 {
     public static class MsSqlServiceCollectionExtensions
     {
-        public static IServiceCollection AddMssqlDbContext<DbContext>(
+        public static IServiceCollection AddMssqlDbContext(
             this IServiceCollection serviceCollection, 
             IConfiguration config = null)
         {
-            serviceCollection.AddDbContext<NorthwindDbContext>(options =>
+            serviceCollection.AddDbContext<NorthwindDbContext, MsSqlNorthwindDbContext>(options =>
             {
                 options.UseSqlServer(config.GetConnectionString("NorthwindDbContext"), b => b.MigrationsAssembly("Northwind.EF.Persistence.MSSQL"));
             });

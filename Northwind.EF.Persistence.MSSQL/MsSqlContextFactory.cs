@@ -13,13 +13,13 @@ namespace Northwind.EF.Persistence.MSSQL
         {
             var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", false)
-                .AddJsonFile("appetings.local.json", true)
+                .AddJsonFile("appsettings.local.json", true)
                 .Build();
 
             var builder = new DbContextOptionsBuilder<NorthwindDbContext>();
             builder.UseSqlServer(
                 config.GetConnectionString(nameof(NorthwindDbContext)),
-                b => b.MigrationsAssembly("Northwind.EF.Persistence.PSQL")
+                b => b.MigrationsAssembly("Northwind.EF.Persistence.MSSQL")
             );
             return new MsSqlNorthwindDbContext(builder.Options);
         }

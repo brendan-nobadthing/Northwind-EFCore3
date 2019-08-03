@@ -31,7 +31,7 @@ namespace Northwind.EF.WebApi
         {
             services.AddControllers();
 
-            services.AddConfiguredDbContext<NorthwindDbContext>(Configuration);
+            services.AddConfiguredDbContext(Configuration);
            
         }
 
@@ -55,9 +55,11 @@ namespace Northwind.EF.WebApi
             });
 
 
-            ctx.Database.Migrate();
 
-            // NorthwindInitializer.Initialize(ctx);
+            ctx.Database.Migrate();
+            
+
+            NorthwindInitializer.Initialize(ctx);
         }
     }
 }
