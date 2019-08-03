@@ -12,9 +12,9 @@ namespace Northwind.EF.WebApi
         public static IConfigurationBuilder AddNorthwindConfiguration(this IConfigurationBuilder builder, 
             string environmentName, string[] args = null, string path = "")
         {
-            builder.AddJsonFile(Path.Combine(path, "appsetings.json"), false, true);
-            builder.AddJsonFile(Path.Combine(path, $"appsetings.{environmentName}.json"), true, true);
-            builder.AddJsonFile(Path.Combine(path, $"appsetings.local.json"), true, true);
+            builder.AddJsonFile(Path.Combine(path, "appsettings.json"), false, true);
+            builder.AddJsonFile(Path.Combine(path, $"appsettings.{environmentName}.json"), true, true);
+            builder.AddJsonFile(Path.Combine(path, $"appsettings.local.json"), true, true);
 
             builder.AddEnvironmentVariables();
             builder.AddCommandLine(args ?? new string[0]);

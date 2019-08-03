@@ -56,6 +56,8 @@ namespace Northwind.EF.WebApi
 
 
             ctx.Database.Migrate();
+
+            // NorthwindInitializer.Initialize(ctx);
         }
     }
 }
