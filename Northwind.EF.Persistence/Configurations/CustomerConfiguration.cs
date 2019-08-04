@@ -8,6 +8,8 @@ namespace Northwind.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
+            builder.ToTable("Customer");
+
             builder.Property(e => e.CustomerId)
                 .HasColumnName("CustomerID")
                 .HasMaxLength(5)
