@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Bogus;
-using Northwind.EF.Application.Performance.Fakes;
 using Northwind.EF.Domain.Entities;
 
 namespace Northwind.EF.Application.Performance
