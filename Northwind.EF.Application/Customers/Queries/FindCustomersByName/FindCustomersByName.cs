@@ -26,12 +26,10 @@ namespace Northwind.EF.Application.Customers.Queries.FindCustomersByName
         public class Handler : IRequestHandler<FindCustomersByName, CustomersListViewModel>
         {
             private readonly INorthwindDbContext _context;
-            private readonly IMapper _mapper;
 
-            public Handler(INorthwindDbContext context, IMapper mapper)
+            public Handler(INorthwindDbContext context)
             {
                 _context = context;
-                _mapper = mapper;
             }
 
             public async Task<CustomersListViewModel> Handle(FindCustomersByName request, CancellationToken cancellationToken)
@@ -40,7 +38,13 @@ namespace Northwind.EF.Application.Customers.Queries.FindCustomersByName
                 {
                     Customers = await _context.Set<Customer>()
                         .Where(c => c.CompanyName.Contains(request.Name))
-                        .ProjectTo<CustomerLookupModel>(_mapper.ConfigurationProvider)
+                        //.Where(c => c.CompanyName.StartsWith(request.Name))
+                        //.Where(c => c.CompanyName.Equals(request.Name))
+                        .Select(c => new CustomerLookupModel()
+                        {
+                            Name = c.CompanyName,
+                            Id = c.CustomerId
+                        })
                         .ToListAsync(cancellationToken)
                 };
             }

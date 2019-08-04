@@ -26,5 +26,12 @@ namespace Northwind.EF.Application.Performance
         {
             TestContext.Instance.NorthwindDbContext.Set<Customer>().Any().ShouldBeTrue("expected some customers in the DB");
         }
+
+
+        [Fact]
+        public void WeHaveSeededLotsOfTestData()
+        {
+            TestContext.Instance.NorthwindDbContext.Set<Customer>().Count().ShouldBeGreaterThan<int>(10000);
+        }
     }
 }

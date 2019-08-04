@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Northwind.EF.Persistence.MSSQL;
 
 namespace Northwind.EF.Persistence.MSSQL.Migrations
 {
     [DbContext(typeof(MsSqlNorthwindDbContext))]
-    partial class MsSqlNorthwindDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190804114420_CustomerNameIndex")]
+    partial class CustomerNameIndex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

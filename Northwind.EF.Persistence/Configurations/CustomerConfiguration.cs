@@ -23,6 +23,8 @@ namespace Northwind.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(40);
 
+            builder.HasIndex(c => c.CompanyName);
+
             builder.Property(e => e.ContactName).HasMaxLength(30);
 
             builder.Property(e => e.ContactTitle).HasMaxLength(30);
